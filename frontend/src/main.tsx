@@ -1,6 +1,6 @@
 const Main = () => {
   return (
-    <div style={{ width: "100%" }}>
+    <div>
       <p>Hello</p>
     </div>
   );

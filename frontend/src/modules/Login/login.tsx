@@ -2,6 +2,7 @@ import { useUserStore } from "@/store";
 import Logo from "@/assets/images/logo-devlinks-small.svg";
 import "./login.scss";
 import Card from "@/components/Card/Card";
+import Button from "@/components/Button/Button";
 const Login = () => {
   const { login } = useUserStore();
   return (
@@ -12,7 +13,7 @@ const Login = () => {
       </div>
       <Card>
         <h2>Login</h2>
-        <button onClick={() => null}>Login with Github</button>
+        <Button onClick={() => null}>Login</Button>
       </Card>
     </div>
   );

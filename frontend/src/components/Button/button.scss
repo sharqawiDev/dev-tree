@@ -1,0 +1,41 @@
+.btn-primary {
+  background-color: var(--c-purple);
+  color: var(--c-white);
+  border: none;
+  padding: var(--s-10) var(--s-20);
+  border-radius: var(--s-8);
+  cursor: pointer;
+  line-height: 1.5;
+  font-size: var(--s-16);
+  &:hover {
+    background-color: var(--c-purple-hover);
+  }
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    background-color: var(--c-purple-light);
+    cursor: not-allowed;
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--c-purple);
+  border: 1px solid var(--c-purple);
+  padding: var(--s-10) var(--s-20);
+  border-radius: var(--s-8);
+  cursor: pointer;
+  font-size: var(--s-16);
+  &:hover {
+    background-color: var(--c-purple-hover);
+  }
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    opacity: 0.5;
+    background-color: var(--c-grey-light);
+    cursor: not-allowed;
+  }
+}

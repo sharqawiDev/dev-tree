@@ -9,6 +9,7 @@
 :root {
   font-family: InstrumentSans, system-ui, Helvetica, Arial, sans-serif;
   display: flex;
+  background: var(--c-grey-light);
 }
 
 body {

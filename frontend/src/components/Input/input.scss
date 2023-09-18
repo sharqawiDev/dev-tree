@@ -1,0 +1,53 @@
+input:focus {
+  outline: none;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: var(--s-12);
+  color: var(--c-grey);
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 12px 15px;
+  border-radius: var(--s-8);
+  margin-top: 5px;
+  &:focus-within {
+    //give shadow to the div
+    box-shadow: 0px 0px 32px rgba(99, 60, 255, 0.25);
+    border: 1px solid var(--c-purple);
+  }
+  &.is-invalid {
+    border: 1px solid var(--c-red);
+    box-shadow: none;
+    input {
+      color: var(--c-red);
+    }
+  }
+  input {
+    border: none;
+    width: 100%;
+    padding: 0 10px;
+    font-size: var(--s-15);
+    color: var(--c-black);
+    &::placeholder {
+      color: var(--c-grey);
+    }
+  }
+  .input-icon {
+    margin-top: 2px;
+    pointer-events: none;
+  }
+
+  .invalid-feedback {
+    min-width: fit-content;
+    color: var(--c-red);
+    font-size: 14px;
+  }
+}

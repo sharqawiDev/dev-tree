@@ -3,6 +3,8 @@ import Logo from "@/assets/images/logo-devlinks-small.svg";
 import "./login.scss";
 import Card from "@/components/Card/Card";
 import Button from "@/components/Button/Button";
+import Input from "@/components/Input/Input";
+import EmailIcon from "@/assets/images/icon-email";
 const Login = () => {
   const { login } = useUserStore();
   return (
@@ -13,6 +15,7 @@ const Login = () => {
       </div>
       <Card>
         <h2>Login</h2>
+        <Input label="Email address" icon={<EmailIcon />} />
         <Button onClick={() => null}>Login</Button>
       </Card>
     </div>

@@ -4,21 +4,40 @@ import "./login.scss";
 import Card from "@/components/Card/Card";
 import Button from "@/components/Button/Button";
 import Input from "@/components/Input/Input";
-import EmailIcon from "@/assets/images/icon-email";
+import EmailIcon from "@/components/Icons/icon-email";
+import PasswordIcon from "@/components/Icons/icon-password";
+
 const Login = () => {
   const { login } = useUserStore();
   return (
-    <div className="login-page">
-      <div className="header">
+    <main className="login-page">
+      <header>
         <img src={Logo} alt="devlinks logo" />
-        <h1>DevTree</h1>
-      </div>
+        <h1 className="login-header">DevTree</h1>
+      </header>
       <Card>
         <h2>Login</h2>
-        <Input label="Email address" icon={<EmailIcon />} />
+        <p className="sub-msg">
+          Add your details below to get back into the app
+        </p>
+        <Input
+          label="Email address"
+          icon={<EmailIcon />}
+          placeholder="e.g.alex@email.com"
+          type="email"
+        />
+        <Input
+          label="Password"
+          icon={<PasswordIcon />}
+          placeholder="Enter your password"
+          type="password"
+        />
         <Button onClick={() => null}>Login</Button>
+        <p className="register-msg">
+          Don't have an account? <a>Create account</a>
+        </p>
       </Card>
-    </div>
+    </main>
   );
 };
 

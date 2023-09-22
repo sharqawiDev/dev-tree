@@ -4,11 +4,32 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  .header {
+  header {
     display: flex;
-    gap: 5px;
+    gap: var(--s-5);
+    margin-bottom: var(--s-50);
   }
   .card {
-    width: 400px;
+    width: 476px;
+    padding: var(--s-40);
+    h2 {
+      height: 48px;
+    }
+    p.sub-msg {
+      margin-bottom: var(--s-40);
+      color: var(--c-grey);
+    }
+    .btn {
+      margin-top: 20px;
+    }
+    p.register-msg {
+      align-self: center;
+      margin-top: 24px;
+      color: var(--c-grey);
+      a {
+        color: var(--c-purple);
+        cursor: pointer;
+      }
+    }
   }
 }

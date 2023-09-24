@@ -4,11 +4,13 @@ import Login from "@/modules/Login/login";
 import Home from "./modules/home/home";
 import ErrorPage from "./modules/error/error-page";
 import { FC } from "react";
+import Register from "./modules/Register/register";
 const Main = () => {
   const { isAuthenticated } = useUserStore();
   return (
     <Switch>
       <Route path="/login" render={() => <Login />} />
+      <Route path="/register" render={() => <Register />} />
       <PrivateRoute
         path="/"
         isAuthenticated={isAuthenticated}

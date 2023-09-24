@@ -1,4 +1,4 @@
-.login-page {
+.register-page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,10 +24,13 @@
     .btn {
       margin-top: 20px;
     }
-    p.register-msg {
+    p.password-check {
+      margin: var(--s-10) 0;
+      font-size: var(--s-13);
+    }
+    p.login-msg {
       align-self: center;
       margin-top: 24px;
-
       a {
         color: var(--c-purple);
         cursor: pointer;

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useUserStore } from "@/store";
-import "./login.scss";
+import "./register.scss";
 import Logo from "@/assets/images/logo-devlinks-small.svg";
 import Card from "@/components/Card/Card";
 import Button from "@/components/Button/Button";
@@ -9,9 +9,9 @@ import Input from "@/components/Input/Input";
 import EmailIcon from "@/components/Icons/icon-email";
 import PasswordIcon from "@/components/Icons/icon-password";
 
-const Login = () => {
+const Register = () => {
   const history = useHistory();
-  const { login, isAuthenticated } = useUserStore();
+  const { isAuthenticated } = useUserStore();
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -19,16 +19,14 @@ const Login = () => {
     }
   }, []);
   return (
-    <main className="login-page">
+    <main className="register-page">
       <header>
         <img src={Logo} alt="devlinks logo" />
         <h1 className="login-header">DevTree</h1>
       </header>
       <Card>
-        <h2>Login</h2>
-        <p className="sub-msg">
-          Add your details below to get back into the app
-        </p>
+        <h2>Create account</h2>
+        <p className="sub-msg">Let's get you started sharing your links!</p>
         <Input
           label="Email address"
           icon={<EmailIcon />}
@@ -36,18 +34,27 @@ const Login = () => {
           type="email"
         />
         <Input
-          label="Password"
+          label="Create password"
           icon={<PasswordIcon />}
-          placeholder="Enter your password"
+          placeholder="At least 8 characters"
           type="password"
         />
+        <Input
+          label="Confirm password"
+          icon={<PasswordIcon />}
+          placeholder="At least 8 characters"
+          type="password"
+        />
+        <p className="password-check">
+          Password must contain at least 8 characters {true && "✅"}
+        </p>
         <Button onClick={() => null}>Login</Button>
-        <p className="register-msg">
-          Don't have an account? <Link to={"register"}>Create account</Link>
+        <p className="login-msg">
+          Already have an account? <Link to={"login"}>Login</Link>
         </p>
       </Card>
     </main>
   );
 };
 
-export default Login;
+export default Register;

@@ -1,6 +1,8 @@
+import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { useUserStore } from "@/store";
-import Logo from "@/assets/images/logo-devlinks-small.svg";
 import "./login.scss";
+import Logo from "@/assets/images/logo-devlinks-small.svg";
 import Card from "@/components/Card/Card";
 import Button from "@/components/Button/Button";
 import Input from "@/components/Input/Input";
@@ -8,7 +10,14 @@ import EmailIcon from "@/components/Icons/icon-email";
 import PasswordIcon from "@/components/Icons/icon-password";
 
 const Login = () => {
-  const { login } = useUserStore();
+  const history = useHistory();
+  const { login, isAuthenticated } = useUserStore();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      history.push("/");
+    }
+  }, []);
   return (
     <main className="login-page">
       <header>

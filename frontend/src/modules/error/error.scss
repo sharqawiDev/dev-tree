@@ -1,0 +1,20 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  h1,
+  p {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+  text-align: center;
+  div {
+    margin-top: var(--s-20);
+    display: flex;
+    gap: var(--s-10);
+  }
+}

@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { devtools, persist } from "zustand/middleware";
+import { devtools } from "zustand/middleware";
 
 interface UserStore {
   isAuthenticated: boolean;
@@ -11,21 +11,19 @@ interface UserStore {
 
 export const useUserStore = create<UserStore>()(
   devtools(
-    persist(
-      (set) => ({
-        isAuthenticated: false,
-        login: (loginFn) => {
-          loginFn();
-          set({ isAuthenticated: true });
-        },
-        logout: (logoutFn) => {
-          logoutFn();
-          set({ isAuthenticated: false });
-        },
-      }),
-      {
-        name: "user-storage",
-      }
-    )
+    (set) => ({
+      isAuthenticated: false,
+      login: (loginFn) => {
+        loginFn();
+        set({ isAuthenticated: true });
+      },
+      logout: (logoutFn) => {
+        logoutFn();
+        set({ isAuthenticated: false });
+      },
+    }),
+    {
+      name: "user-storage",
+    }
   )
 );

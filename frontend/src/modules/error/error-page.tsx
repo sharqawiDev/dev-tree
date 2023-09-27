@@ -9,7 +9,7 @@ const Error = () => {
       <h1>404</h1>
       <p>Page {location.pathname} not found</p>
       <div>
-        <Button onClick={() => history.push("login")}>Login</Button>
+        <Button onClick={() => history.push("/login")}>Login</Button>
         <Button onClick={() => history.goBack()}>Go Back</Button>
       </div>
     </div>

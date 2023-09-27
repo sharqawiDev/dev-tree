@@ -49,7 +49,7 @@ const Login = () => {
     if (isAuthenticated) {
       history.push("/");
     }
-  }, []);
+  }, [isAuthenticated]);
   return (
     <main className="login-page">
       <header>
@@ -86,13 +86,14 @@ const Login = () => {
             value={formik.values.password}
             errorMessage={formik.touched.password ? formik.errors.password : ""}
           />
+          <Button
+            onClick={() => null}
+            disabled={!formik.isValid || !formik.dirty}
+            type="submit"
+          >
+            Login
+          </Button>
         </form>
-        <Button
-          onClick={() => null}
-          disabled={!formik.isValid || !formik.dirty}
-        >
-          Login
-        </Button>
         <p className="register-msg">
           Don't have an account? <Link to={"register"}>Create account</Link>
         </p>

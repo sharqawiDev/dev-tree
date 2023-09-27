@@ -1,0 +1,50 @@
+.home {
+  height: auto;
+  margin: 24px;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    border-radius: var(--s-8);
+    padding: 16px;
+    background: var(--c-white);
+    div {
+      display: flex;
+      align-items: center;
+      #logo {
+        margin-right: var(--s-5);
+      }
+    }
+    .logo-div {
+      cursor: pointer;
+    }
+    div.tabs {
+      a {
+        display: flex;
+        align-items: center;
+        gap: var(--s-5);
+        margin-right: var(--s-10);
+        color: var(--c-grey);
+        font-weight: 500;
+        text-decoration: none;
+        svg {
+          fill: var(--c-grey);
+        }
+        &:hover {
+          color: var(--c-purple);
+          svg {
+            fill: var(--c-purple);
+          }
+        }
+        &.active {
+          color: var(--c-purple);
+          background: var(--c-purple-light);
+          svg {
+            fill: var(--c-purple);
+          }
+          padding: 11px 27px;
+          border-radius: var(--s-8);
+        }
+      }
+    }
+  }
+}

@@ -8,8 +8,18 @@
 }
 :root {
   font-family: InstrumentSans, system-ui, Helvetica, Arial, sans-serif;
-  display: flex;
   background: var(--c-grey-light);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
 }
 
 body {

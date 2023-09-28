@@ -6,6 +6,8 @@ import ProfileIcon from "@/components/Icons/icon-profile";
 import "./home.scss";
 import { homeURL, linksURL, profileDetailsURL } from "@/data/routes";
 import Button from "@/components/Button/Button";
+import MobileMockup from "@/components/Mobile-Mock/mobile";
+import Card from "@/components/Card/Card";
 const Home = () => {
   const [selectedTab, setSelectedTab] = useState("links");
   const location = useLocation();
@@ -58,7 +60,17 @@ const Home = () => {
       </nav>
       <Switch>
         <Route path={linksURL}>
-          <div>Links</div>
+          <section className="main-section">
+            <MobileMockup />
+            <Card className="links-generator">
+              <h1>Customize your links</h1>
+              <p className="sub-msg">
+                Add/edit/remove links below and then share all your profiles
+                with the world!
+              </p>
+              <Button variant="secondary">+ Add new link</Button>
+            </Card>
+          </section>
         </Route>
         <Route path={profileDetailsURL}>
           <div>Profile Details</div>
